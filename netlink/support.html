@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>网连技术支持</title>
+  <meta name="description" content="网连 macOS 应用技术支持、常见问题、隐私说明和故障排查。">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f8fb;
+      --fg: #162033;
+      --muted: #5f6b7a;
+      --card: #ffffff;
+      --border: #dfe5ee;
+      --accent: #1769e0;
+      --accent-soft: rgba(23, 105, 224, 0.1);
+      --warning: #9a5b00;
+      --warning-bg: #fff6df;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #101419;
+        --fg: #edf3ff;
+        --muted: #a9b5c4;
+        --card: #171d25;
+        --border: #2b3543;
+        --accent: #6ea8ff;
+        --accent-soft: rgba(110, 168, 255, 0.14);
+        --warning: #ffd27a;
+        --warning-bg: rgba(255, 210, 122, 0.12);
+      }
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font: 16px/1.7 -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+    main {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 48px 20px 72px;
+    }
+    header, section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      margin: 0 0 18px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.04);
+    }
+    h1, h2, h3 {
+      line-height: 1.25;
+      margin: 0 0 12px;
+    }
+    h1 {
+      font-size: 32px;
+      letter-spacing: -0.02em;
+    }
+    h2 {
+      font-size: 21px;
+      margin-top: 4px;
+    }
+    h3 {
+      font-size: 17px;
+      margin-top: 18px;
+    }
+    p, ul, ol {
+      margin: 10px 0 0;
+    }
+    ul, ol {
+      padding-left: 1.4em;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    a {
+      color: var(--accent);
+    }
+    code {
+      font-family: "SF Mono", Menlo, Consolas, monospace;
+      font-size: 0.94em;
+    }
+    .meta, .note {
+      color: var(--muted);
+    }
+    .summary {
+      border-left: 4px solid var(--accent);
+      padding-left: 14px;
+    }
+    .contact {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .contact-card {
+      background: var(--accent-soft);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+    }
+    .contact-card strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+    .warning {
+      background: var(--warning-bg);
+      border: 1px solid rgba(154, 91, 0, 0.24);
+      border-radius: 14px;
+      color: var(--warning);
+      padding: 14px 16px;
+      margin-top: 14px;
+    }
+    .footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 24px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>网连技术支持</h1>
+      <p class="meta">Support for NetLink macOS App · <a href="support-en.html">English version</a></p>
+      <p class="meta">最后更新：2026 年 5 月 18 日</p>
+      <p class="summary">网连是一款 macOS 本地网络环境检测工具，用于查看本机网络、公网出口、代理/VPN 风险、DNS、IPv6、连通性、系统环境和硬件概览。本页面提供技术支持、常见问题、故障排查和隐私说明。</p>
+      <div class="contact">
+        <div class="contact-card">
+          <strong>技术支持邮箱</strong>
+          <a href="mailto:venshine.cn@gmail.com">venshine.cn@gmail.com</a>
+          <p class="note">建议在邮件中附上 macOS 版本、App 版本、问题截图和复现步骤。</p>
+        </div>
+        <div class="contact-card">
+          <strong>隐私政策</strong>
+          <a href="./privacy-policy.html">查看网连隐私政策</a>
+          <p class="note">网连不收集用户信息，不提供账号系统，不展示广告，不进行跨应用或跨网站追踪。</p>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <h2>1. App 基本信息</h2>
+      <ul>
+        <li>应用名称：网连</li>
+        <li>英文说明：NetLink</li>
+        <li>平台：macOS</li>
+        <li>分类：工具</li>
+        <li>Bundle ID：<code>com.netlink.app</code></li>
+        <li>支持语言：简体中文、English</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>2. 主要功能</h2>
+      <ul>
+        <li>智能检测：汇总当前网络、系统环境和安全评分。</li>
+        <li>本机网络：展示局域网 IP、DNS、IPv6 状态和网络类型。</li>
+        <li>公网信息：展示公网 IP、地区、运营商、组织、时区和出口一致性。</li>
+        <li>代理检测：辅助识别系统代理、VPN、Tor、数据中心或托管网络特征。</li>
+        <li>IP 风险：通过第三方服务查询公开风险信号和代理风险。</li>
+        <li>连通性检测：检查常用站点和 AI 服务的网络可达性。</li>
+        <li>历史记录：在本机保存最近检测结果、IP 历史和安全评分历史。</li>
+        <li>环境概览：展示系统、时区、语言、硬件和显示器相关信息。</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>3. 常见问题</h2>
+      <h3>为什么检测结果会显示失败？</h3>
+      <p>公网、风险和连通性检测依赖外部网络服务。若当前网络较弱、DNS 异常、运营商路由不稳定，或目标服务在所在地区不可达，检测可能失败。失败不一定代表本机网络故障。</p>
+
+      <h3>为什么国内网络下部分服务不可达？</h3>
+      <p>部分检测目标和第三方服务位于中国大陆以外，可能受地区政策、网络路由、运营商策略或服务自身限制影响。网连会尽量显示失败原因，但无法保证所有第三方服务在所有地区都可访问。</p>
+
+      <h3>为什么显示“上次成功检测结果”？</h3>
+      <p>当本次公网检测失败但本机存在旧结果时，网连可能展示上次成功检测结果，并在界面中标注。该结果仅供参考，不代表本次检测成功。</p>
+
+      <h3>网连会上传我的硬件信息或历史记录吗？</h3>
+      <p>不会。硬件概览、系统环境、历史记录和应用设置仅保存在你的 Mac 本机。网连不运营用于接收、保存或分析用户数据的开发者服务器。</p>
+
+      <h3>为什么 IP 地理位置不准确？</h3>
+      <p>IP 地理位置由第三方数据库提供，可能因运营商出口、代理、VPN、企业网络、CDN 或数据库更新延迟而不准确。网连展示的是检测服务返回的结果，不代表设备的精确物理位置。</p>
+
+      <h3>网连是否需要登录或订阅？</h3>
+      <p>当前版本不提供账号系统，不需要登录，不包含订阅或应用内购买。</p>
+    </section>
+
+    <section>
+      <h2>4. 故障排查步骤</h2>
+      <ol>
+        <li>确认 Mac 已连接网络，并能在浏览器中打开常用网站。</li>
+        <li>关闭或切换 VPN、代理、网络加速器后重新检测，观察结果是否变化。</li>
+        <li>切换 Wi-Fi、热点或其他网络环境，排除单一网络线路问题。</li>
+        <li>检查系统时间、时区和 DNS 设置是否异常。</li>
+        <li>退出并重新打开网连，然后再次点击检测。</li>
+        <li>如果问题持续存在，请将问题截图、macOS 版本、App 版本、当前网络环境和复现步骤发送至 <a href="mailto:venshine.cn@gmail.com">venshine.cn@gmail.com</a>。</li>
+      </ol>
+      <div class="warning">请不要在邮件中发送密码、验证码、证件号码、支付信息或其他敏感个人信息。</div>
+    </section>
+
+    <section>
+      <h2>5. 隐私与数据说明</h2>
+      <p>网连是一款本地工具，不收集任何用户信息，不提供账号系统，不展示广告，不进行跨应用或跨网站追踪。应用产生的检测结果和历史记录仅保存在你的 Mac 本机。</p>
+      <p>部分检测功能需要你的设备直接访问第三方网络服务，以判断公网出口、IP 地理位置、代理/VPN 标记、风险和连通性。访问这些服务时，你的公网 IP 地址和常规网络请求信息会被相应第三方服务接收，这是完成实时检测所必需的。</p>
+      <p>完整说明请阅读 <a href="./privacy-policy.html">网连隐私政策</a>。</p>
+    </section>
+
+    <section>
+      <h2>6. 第三方服务说明</h2>
+      <p>网连可能直接访问以下第三方服务或目标站点，用于公网信息、风险识别和连通性检测：</p>
+      <ul>
+        <li><code>https://ipwho.is/</code></li>
+        <li><code>https://api.ipapi.is/</code></li>
+        <li><code>https://1.1.1.1/cdn-cgi/trace</code></li>
+        <li><code>https://proxycheck.io/</code></li>
+        <li><code>https://api.stopforumspam.org/</code></li>
+        <li>Claude、ChatGPT、Gemini、Perplexity、Google、YouTube、GitHub、X、Wikipedia、Cloudflare 等连通性检测目标。</li>
+      </ul>
+      <p>这些服务由各自运营方控制。网连不会从这些服务接收或保存你的个人信息；第三方如何处理访问日志、IP 地址和请求信息，适用其各自的隐私政策与服务条款。</p>
+    </section>
+
+    <section>
+      <h2>7. 联系支持时请提供的信息</h2>
+      <ul>
+        <li>你的 macOS 版本，例如 macOS 14、macOS 15 或更高版本。</li>
+        <li>网连 App 版本号。</li>
+        <li>出现问题的页面，例如智能检测、本机网络、公网信息、IP 风险或连通性。</li>
+        <li>问题发生时的网络环境，例如家庭 Wi-Fi、公司网络、热点、VPN 或代理。</li>
+        <li>错误提示截图和复现步骤。</li>
+      </ul>
+      <p class="note">这些信息仅用于定位和回复你的支持请求。请勿发送不必要的个人敏感信息。</p>
+    </section>
+
+    <section>
+      <h2>8. 响应时间</h2>
+      <p>我们会尽量在收到邮件后的 3 到 5 个工作日内回复。由于网络检测结果会受到地区、运营商、路由和第三方服务状态影响，部分问题可能需要更多上下文才能判断。</p>
+    </section>
+
+    <section>
+      <h2>9. 免责声明</h2>
+      <p>网连提供的网络检测、风险评分、地理位置和连通性结果仅供参考，不构成安全承诺、法律意见或网络服务可用性保证。请结合实际网络环境和专业判断使用检测结果。</p>
+    </section>
+
+    <p class="footer">© 2026 Venshine. All rights reserved.</p>
+  </main>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Netlink Support</title>
+  <meta name="description" content="Support, FAQ, privacy notes, and troubleshooting for the Netlink macOS app.">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f8fb;
+      --fg: #162033;
+      --muted: #5f6b7a;
+      --card: #ffffff;
+      --border: #dfe5ee;
+      --accent: #1769e0;
+      --accent-soft: rgba(23, 105, 224, 0.1);
+      --warning: #9a5b00;
+      --warning-bg: #fff6df;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #101419;
+        --fg: #edf3ff;
+        --muted: #a9b5c4;
+        --card: #171d25;
+        --border: #2b3543;
+        --accent: #6ea8ff;
+        --accent-soft: rgba(110, 168, 255, 0.14);
+        --warning: #ffd27a;
+        --warning-bg: rgba(255, 210, 122, 0.12);
+      }
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font: 16px/1.7 -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+    main {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 48px 20px 72px;
+    }
+    header, section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      margin: 0 0 18px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.04);
+    }
+    h1, h2, h3 {
+      line-height: 1.25;
+      margin: 0 0 12px;
+    }
+    h1 {
+      font-size: 32px;
+      letter-spacing: -0.02em;
+    }
+    h2 {
+      font-size: 21px;
+      margin-top: 4px;
+    }
+    h3 {
+      font-size: 17px;
+      margin-top: 18px;
+    }
+    p, ul, ol {
+      margin: 10px 0 0;
+    }
+    ul, ol {
+      padding-left: 1.4em;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    a {
+      color: var(--accent);
+    }
+    code {
+      font-family: "SF Mono", Menlo, Consolas, monospace;
+      font-size: 0.94em;
+    }
+    .meta, .note {
+      color: var(--muted);
+    }
+    .summary {
+      border-left: 4px solid var(--accent);
+      padding-left: 14px;
+    }
+    .contact {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .contact-card {
+      background: var(--accent-soft);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+    }
+    .contact-card strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+    .warning {
+      background: var(--warning-bg);
+      border: 1px solid rgba(154, 91, 0, 0.24);
+      border-radius: 14px;
+      color: var(--warning);
+      padding: 14px 16px;
+      margin-top: 14px;
+    }
+    .footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 24px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Netlink Support</h1>
+      <p class="meta">Last updated: August 20, 2026</p>
+      <p class="meta"><a href="support.html">中文版 · Chinese version</a></p>
+      <p class="summary">Netlink is a local macOS network environment inspection tool for viewing your local network, public exit, proxy/VPN signals, DNS, IPv6, connectivity, system environment, and hardware overview. This page provides support contact, FAQ, troubleshooting, and privacy notes.</p>
+      <p>Support email: <code>venshine.cn@gmail.com</code> — please include your macOS version, app version, screenshots, and steps to reproduce.</p>
+      <p>Privacy: see the <a href="privacy-policy-en.html">Netlink Privacy Policy</a>. Netlink collects no user information, has no account system, shows no ads, and does no cross-app or cross-site tracking.</p>
+    </header>
+
+    <section>
+      <h2>1. App basics</h2>
+      <ul>
+        <li>App name: Netlink (Chinese: 网连)</li>
+        <li>Platform: macOS</li>
+        <li>Category: Utilities</li>
+        <li>Bundle ID: <code>com.netlink.app</code></li>
+        <li>Languages: English, Simplified Chinese</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>2. Main features</h2>
+      <ul>
+        <li>Smart inspection: aggregates current network, system environment, and the network score.</li>
+        <li>Local network: LAN IP, DNS, IPv6 status, and interface type.</li>
+        <li>Public info: public IP, region, ISP, organization, time zone, and exit consistency.</li>
+        <li>Proxy detection: helps identify system proxy, VPN, Tor, datacenter, or hosting signals.</li>
+        <li>IP risk: queries public risk signals via third-party services.</li>
+        <li>Connectivity: checks reachability of common sites and AI services.</li>
+        <li>History: keeps recent results, IP history, and score history locally.</li>
+        <li>Environment overview: system, time zone, language, hardware, and display info.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>3. FAQ</h2>
+      <h3>Why do some checks fail?</h3>
+      <p>Public, risk, and connectivity checks rely on external services. Weak networks, DNS issues, unstable routing, or regionally unreachable targets can cause failures. A failure does not necessarily mean your local network is broken.</p>
+      <h3>Why are some services unreachable in certain regions?</h3>
+      <p>Some lookup services and connectivity targets may be affected by regional policy, routing, carrier behavior, or the services' own restrictions. Netlink shows the failure reason where possible, but cannot guarantee every third-party service is reachable everywhere.</p>
+      <h3>Why do I see "last successful result"?</h3>
+      <p>When the current public lookup fails but an older result exists on your Mac, Netlink may show the last successful result, clearly labeled. It is for reference only and does not mean the current inspection succeeded.</p>
+      <h3>Does Netlink upload my hardware info or history?</h3>
+      <p>No. The hardware overview, system environment, history, and settings stay on your Mac. Netlink operates no developer servers that receive, store, or analyze user data.</p>
+      <h3>Why is the IP geolocation inaccurate?</h3>
+      <p>IP geolocation comes from third-party databases and can be off due to carrier exits, proxies, VPNs, corporate networks, CDNs, or database lag. Netlink shows what the lookup services return; it is not your precise physical location.</p>
+      <h3>Does Netlink require sign-in or a subscription?</h3>
+      <p>No. The current version has no accounts, no sign-in, no subscriptions, and no in-app purchases.</p>
+    </section>
+
+    <section>
+      <h2>4. Troubleshooting</h2>
+      <ol>
+        <li>Confirm your Mac is online and common websites open in a browser.</li>
+        <li>Turn off or switch your VPN/proxy/accelerator, then inspect again and compare.</li>
+        <li>Switch to another Wi-Fi network or hotspot to rule out a single-line issue.</li>
+        <li>Check the system time, time zone, and DNS settings.</li>
+        <li>Quit and reopen Netlink, then run the inspection again.</li>
+      </ol>
+      <p>If the problem persists, email screenshots, your macOS version, app version, current network environment, and reproduction steps to <code>venshine.cn@gmail.com</code>. Please never include passwords, verification codes, ID numbers, payment details, or other sensitive personal information.</p>
+    </section>
+
+    <section>
+      <h2>5. Privacy and data</h2>
+      <p>Netlink is a local tool: it collects no user information, has no account system, shows no ads, and does no tracking. Inspection results and history stay on your Mac.</p>
+      <p>Some features require your device to contact third-party services directly to determine the public exit, IP geolocation, proxy/VPN flags, risk, and connectivity. Those services receive your public IP address and ordinary request metadata as part of the lookup. See the <a href="privacy-policy-en.html">full privacy policy</a>.</p>
+    </section>
+
+    <section>
+      <h2>6. Third-party services</h2>
+      <ul>
+        <li><code>https://ipwho.is/</code></li>
+        <li><code>https://api.ipapi.is/</code></li>
+        <li><code>https://1.1.1.1/cdn-cgi/trace</code></li>
+        <li><code>https://proxycheck.io/</code></li>
+        <li><code>https://api.stopforumspam.org/</code></li>
+        <li>Connectivity targets: Claude, ChatGPT, Gemini, Perplexity, Google, YouTube, GitHub, X, Wikipedia, Cloudflare, and similar.</li>
+      </ul>
+      <p>These services are operated by their respective providers; their handling of access logs, IP addresses, and request metadata is governed by their own policies and terms.</p>
+    </section>
+
+    <section>
+      <h2>7. What to include when contacting support</h2>
+      <ul>
+        <li>Your macOS version (e.g. macOS 14, macOS 15, or later).</li>
+        <li>Netlink app version.</li>
+        <li>The page where the issue occurs (Smart Inspection, Local Network, Public Info, IP Risk, Connectivity, …).</li>
+        <li>Your network environment at the time (home Wi-Fi, office network, hotspot, VPN, or proxy).</li>
+        <li>Error screenshots and reproduction steps.</li>
+      </ul>
+      <p>This information is used only to diagnose and answer your request. Please avoid sending unnecessary sensitive personal information.</p>
+    </section>
+
+    <section>
+      <h2>8. Response time</h2>
+      <p>We aim to reply within 3–5 business days. Because results depend on region, carrier, routing, and third-party service status, some issues may need extra context to diagnose.</p>
+    </section>
+
+    <section>
+      <h2>9. Disclaimer</h2>
+      <p>Netlink's inspection results, scores, geolocation, and connectivity outcomes are for reference only and constitute no security guarantee, legal advice, or availability promise. Use them together with your actual network context and professional judgment.</p>
+      <p class="meta">© 2026 Venshine. All rights reserved.</p>
+    </section>
+  </main>
+</body>
+</html>

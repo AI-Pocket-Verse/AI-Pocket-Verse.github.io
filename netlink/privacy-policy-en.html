@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Netlink Privacy Policy</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f8fb;
+      --fg: #162033;
+      --muted: #5f6b7a;
+      --card: #ffffff;
+      --border: #dfe5ee;
+      --accent: #1769e0;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #101419;
+        --fg: #edf3ff;
+        --muted: #a9b5c4;
+        --card: #171d25;
+        --border: #2b3543;
+        --accent: #6ea8ff;
+      }
+    }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font: 16px/1.7 -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 20px 72px;
+    }
+    header, section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      margin: 0 0 18px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.04);
+    }
+    h1, h2 {
+      line-height: 1.25;
+      margin: 0 0 12px;
+    }
+    h1 {
+      font-size: 32px;
+      letter-spacing: -0.02em;
+    }
+    h2 {
+      font-size: 21px;
+      margin-top: 4px;
+    }
+    p, ul {
+      margin: 10px 0 0;
+    }
+    ul {
+      padding-left: 1.4em;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    .meta, .note {
+      color: var(--muted);
+    }
+    .summary {
+      border-left: 4px solid var(--accent);
+      padding-left: 14px;
+    }
+    a {
+      color: var(--accent);
+    }
+    code {
+      font-family: "SF Mono", Menlo, Consolas, monospace;
+      font-size: 0.94em;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Netlink Privacy Policy</h1>
+      <p class="meta">Effective date: August 20, 2026 · Last updated: September 1, 2026 (applies from version 1.6.0)</p>
+      <p class="meta">Scope: the macOS app "Netlink" (Bundle ID: <code>com.netlink.app</code>)</p>
+      <p class="meta"><a href="privacy-policy.html">中文版 · Chinese version</a></p>
+      <p class="summary">Netlink is a local network environment inspection tool for viewing your Mac's local network, public exit, proxy/VPN signals, DNS, IPv6, system environment, and hardware overview, with additional capabilities including AI service availability check, bandwidth speed test, multi-location probing, domain diagnosis, and report export. We do not collect any user information, provide no account system, show no ads, do no cross-app or cross-site tracking, and operate no servers that receive, store, or analyze user data. The app does not request or read Location, Microphone, Camera, Contacts, or other system privacy permissions. All inspection results and history stay on your Mac.</p>
+    </header>
+
+    <section>
+      <h2>1. How we read Apple's privacy disclosure requirements</h2>
+      <p>Apple requires developers to accurately disclose, in App Store Connect, the data actually collected, used, and transmitted by the app and any third-party services, and to keep the privacy policy, the App Privacy label, and the app's behavior consistent. Accordingly, this document explains what information Netlink, as a local tool, processes on your device, which third-party services it may reach during inspection, and how to interpret results under restricted or weak network conditions.</p>
+    </section>
+
+    <section>
+      <h2>2. What this app never does</h2>
+      <ul>
+        <li>We do not collect, receive, store, or analyze your personal information.</li>
+        <li>No account registration or sign-in is required.</li>
+        <li>We do not upload your inspection results to any developer-operated server.</li>
+        <li>We do not sell user data.</li>
+        <li>We do not use data for advertising, ad attribution, or cross-app tracking.</li>
+        <li>We do not request or read Location (Core Location) permission, nor direct users to grant it in System Settings › Privacy &amp; Security › Location Services.</li>
+        <li>We do not read Contacts, Photos, Camera, Microphone, Calendar, Bluetooth, or other system privacy data.</li>
+        <li>We do not read preferences of other apps such as Safari; related items only prompt you to check manually.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>3. Information processed on your device</h2>
+      <p>To complete a network environment inspection, Netlink reads, computes, and displays the following information locally on your Mac. It is used by the app on-device only; we do not collect or upload it:</p>
+      <ul>
+        <li>Network information: local LAN IP, DNS servers, IPv6 availability, system proxy configuration (HTTP/HTTPS/SOCKS/PAC status and targets), network interface type, and network change events.</li>
+        <li>Public exit information: public IP, country or region, city, ISP, organization, time zone, proxy/VPN/Tor/datacenter/crawler flags, and multi-source IP consistency results.</li>
+        <li>Risk lookup results: IP risk score, proxy signals, spam-list hits, and lookup error messages.</li>
+        <li>System environment: system time, time zone, language and region, IPv6 hints.</li>
+        <li>Hardware overview: CPU model, memory size, GPU name, display vendor/model/serial info, device serial number, network interface MAC addresses.</li>
+        <li>Network profiles: an on-device fingerprint computed from your LAN subnet hint, interface type, and DNS list (no Wi-Fi name/SSID, no Location) used to recognize "the same network environment" and record first/last seen times.</li>
+        <li>Network event timeline: local records of factual changes — public IP, LAN, DNS, and time-zone mismatch events.</li>
+        <li>Connection diagnosis results: connection timing breakdown (DNS/TCP/TLS/TTFB), direct-vs-system-proxy comparison, speed test and multi-location probe results — produced and shown only when you actively run those checks.</li>
+        <li>App settings: menu bar preferences, notification preferences, menu bar click behavior, floating widget and alert-rule switches, etc.</li>
+      </ul>
+      <p>The hardware and system information above is used only to show your current device environment in the app UI and is stored locally. Hardware identifiers — including the device serial number, network interface MAC addresses, and display serial info — never leave your device, are never sent to any third-party service, and are never used for user identification, device fingerprinting, or tracking of any kind.</p>
+    </section>
+
+    <section>
+      <h2>4. Information stored on your device</h2>
+      <p>Netlink stores necessary app state locally so the most recent inspection can be restored on next launch:</p>
+      <ul>
+        <li>The latest inspection snapshot, including public, network, system, hardware, and score results.</li>
+        <li>IP history, score history, the network event timeline, and network profiles.</li>
+        <li>User preferences, stored via macOS UserDefaults or the app's Application Support directory.</li>
+        <li>In-app purchase unlock state and the free-trial start time: the purchase itself is handled by Apple's StoreKit; the app only records the state locally and never uploads it.</li>
+      </ul>
+      <p>This data lives on your Mac. Uninstalling the app or manually clearing its data removes these local records. You can also use "Clear inspection traces" in Settings › Privacy at any time to delete the inspection snapshot, IP history, score history, network profiles, and event timeline (app settings and purchase state are unaffected).</p>
+      <p>Report export (PDF / Markdown / JSON / CSV / share-card PNG) is generated entirely on your device, and you choose the save location in the system save panel. Exporting makes no network requests, and exported content is never uploaded to the developer or any third party.</p>
+    </section>
+
+    <section>
+      <h2>5. Third-party network services</h2>
+      <p>Netlink itself collects nothing and sends nothing to developer servers. Some inspection features require your device to contact third-party services directly to determine the public exit, IP geolocation, proxy/VPN flags, risk, and connectivity. When these services are contacted, your public IP address and ordinary request metadata are received by the respective third party — this is inherent to performing a live lookup.</p>
+      <ul>
+        <li><code>https://ipwho.is/</code>: public IP, geolocation, ISP, time zone.</li>
+        <li><code>https://api.ipapi.is/</code>: VPN, proxy, Tor, datacenter, ASN and related signals.</li>
+        <li><code>https://1.1.1.1/cdn-cgi/trace</code>: corroborates the public exit IP.</li>
+        <li><code>https://proxycheck.io/</code>: IP risk score and proxy signals.</li>
+        <li><code>https://api.stopforumspam.org/</code>: checks whether the IP appears in public spam lists.</li>
+        <li>Connectivity targets: Claude, ChatGPT, Gemini, Perplexity, Google, YouTube, GitHub, X, Wikipedia, Cloudflare, and similar sites.</li>
+        <li>AI service availability check endpoints: <code>https://api.openai.com/</code>, <code>https://api.anthropic.com/</code>, <code>https://generativelanguage.googleapis.com/</code>, <code>https://api.mistral.ai/</code>, <code>https://api.x.ai/</code>, <code>https://api.cohere.com/</code>. Requests carry no API key and no user identifier; the verdict ("authentication rejected (service reachable)" vs "region rejected") is decided on-device from the response status code and public error-code markers in the response body. Contacted only when you run the check or enable scheduled probing.</li>
+        <li><code>https://speed.cloudflare.com/</code>: bandwidth speed test endpoints. A test generates real download/upload traffic at the tier you choose (the app shows the estimated traffic before starting); these requests reach Cloudflare's speed-test endpoints, and Cloudflare may log and aggregate request information under its own policies.</li>
+        <li><code>https://api.globalping.io/</code>: multi-location probing (the Globalping volunteer probe network). What is sent is the probe target you enter (a domain or IP); ping / traceroute is executed by third-party volunteer probe nodes across several regions. <strong>If you choose to probe your own public IP, that IP is sent to those third-party volunteer nodes</strong> — the app asks for a one-time confirmation before you first use this option.</li>
+        <li>Public DoH resolvers (domain diagnosis): <code>cloudflare-dns.com</code>, <code>dns.google</code>, <code>dns.alidns.com</code>, <code>doh.pub</code>. What is sent is the domain name you enter, used for cross-resolver consistency comparison.</li>
+        <li><code>https://crt.sh/</code>: public Certificate Transparency log lookup. What is sent is the domain name you enter.</li>
+        <li><code>https://captive.apple.com/</code>: Apple's official hotspot-detection page, used to detect a captive login portal on the current network; the request is a fixed probe page and contains no personal data.</li>
+      </ul>
+      <p>In addition, the connection timing breakdown and domain diagnosis (port reachability, TLS certificate chain) send network requests, at your command, directly to <strong>the URL or domain you enter</strong>; the target server therefore receives an ordinary network request from your device. Please use these features only against targets you are entitled to test.</p>
+      <p>These services are operated by their respective providers. We do not receive or store your personal information from them; how they handle access logs, IP addresses, and request metadata is governed by their own privacy policies and terms.</p>
+    </section>
+
+    <section>
+      <h2>6. Reachability under restricted or weak networks</h2>
+      <p>Some third-party services and connectivity targets may be unreachable in certain regions due to local policy, routing, carrier behavior, or the services' own restrictions. Unreachable does not necessarily mean your local network is broken.</p>
+      <p>When a public or risk lookup fails, Netlink shows the failure reason. If a previous successful result exists on disk, the app may display it clearly labeled as the last successful result; it should not be read as a fresh successful inspection.</p>
+    </section>
+
+    <section>
+      <h2>7. Purposes</h2>
+      <p>Netlink processes the information above on-device only to:</p>
+      <ul>
+        <li>Show your current network and public exit environment.</li>
+        <li>Identify possible proxy, VPN, Tor, datacenter, or DNS/IPv6 issues.</li>
+        <li>Compute the local network environment score.</li>
+        <li>Keep local history so you can review network changes.</li>
+        <li>Drive the menu bar status, notifications, and app UI per your settings.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>8. Data sharing</h2>
+      <p>We do not collect, upload, or share your local inspection records. When the app contacts third-party lookup services, those services receive your public IP address and request metadata as part of the network request. Beyond that, Netlink never submits your hardware overview, history, or app settings to any third party.</p>
+    </section>
+
+    <section>
+      <h2>9. Data security</h2>
+      <p>Netlink runs inside the system sandbox with outbound-only network permission (no inbound listening). All public data endpoints use HTTPS; the app contains no plain-HTTP public data endpoints. The port reachability check in domain diagnosis makes TCP connection attempts to the host you specify, solely to determine whether a port is reachable — the connection is closed immediately after it is established, no application data is sent, and nothing personally identifiable is transmitted. Note that any internet request may be logged by the target service with access time, IP address, User-Agent, and other basic request information.</p>
+    </section>
+
+    <section>
+      <h2>10. Your controls</h2>
+      <ul>
+        <li>You can choose not to run inspections, or avoid the risk-lookup, connectivity, speed test, multi-location probing, and domain diagnosis features that reach third-party sites — these checks go online only when you actively start them.</li>
+        <li>You can adjust menu bar, notification, floating widget, and alert-rule preferences in the app's settings.</li>
+        <li>You can use "Clear inspection traces" in Settings › Privacy, or clear local history by removing app data or uninstalling the app.</li>
+        <li>Probing your own public IP in multi-location probing requires your explicit confirmation before first use.</li>
+        <li>You can manage notifications, login items, and network-related permissions in macOS System Settings.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>11. Children's privacy</h2>
+      <p>Netlink is not designed for children and contains no social, advertising, account, or profiling features. We do not knowingly collect personal information from children.</p>
+    </section>
+
+    <section>
+      <h2>12. Changes to this policy</h2>
+      <p>If Netlink later adds accounts, cloud sync, developer-operated servers, ads, analytics SDKs, or new third-party services, we will update this policy and the App Privacy information in App Store Connect accordingly. (Report export shipped in version 1.5.0; its privacy practice is described in Section 4 — generated entirely on-device, never uploaded.)</p>
+    </section>
+
+    <section>
+      <h2>13. Contact</h2>
+      <p>If you have questions about this policy or how data is handled, contact us via the developer contact listed on the App Store product page or the support site.</p>
+      <p class="meta">This document describes the privacy practices of the current version of Netlink and is not legal advice.</p>
+    </section>
+  </main>
+</body>
+</html>
